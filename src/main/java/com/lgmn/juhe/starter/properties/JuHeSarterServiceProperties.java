@@ -9,15 +9,28 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class JuHeSarterServiceProperties {
 
     /**
-     *  聚合key
+     * 实名认证key
      */
-    private String key;
+    private String realNameKey;
 
-    public String getKey() {
-        return key;
+    /**
+     * 银行卡三元素key
+     */
+    private String bankCardKey;
+
+    public String getRealNameKey() {
+        return realNameKey;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setRealNameKey(String realNameKey) {
+        this.realNameKey = realNameKey;
+    }
+
+    public String getBankCardKey() {
+        return bankCardKey;
+    }
+
+    public void setBankCardKey(String bankCardKey) {
+        this.bankCardKey = bankCardKey;
     }
 }
