@@ -18,6 +18,11 @@ public class JuHeSarterServiceProperties {
      */
     private String bankCardKey;
 
+    /**
+     * 直连车辆违章key
+     */
+    private String carRegulationsKey;
+
     public String getRealNameKey() {
         return realNameKey;
     }
@@ -32,5 +37,13 @@ public class JuHeSarterServiceProperties {
 
     public void setBankCardKey(String bankCardKey) {
         this.bankCardKey = bankCardKey;
+    }
+
+    public String getCarRegulationsKey() {
+        return carRegulationsKey;
+    }
+
+    public void setCarRegulationsKey(String carRegulationsKey) {
+        this.carRegulationsKey = carRegulationsKey;
     }
 }

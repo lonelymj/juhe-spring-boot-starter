@@ -3,6 +3,7 @@ package com.lgmn.juhe.starter.autoConfigure;
 
 import com.lgmn.juhe.starter.properties.JuHeSarterServiceProperties;
 import com.lgmn.juhe.starter.service.JuHe_BankCard_SarterService;
+import com.lgmn.juhe.starter.service.JuHe_CarRegulationsQuery_StarterService;
 import com.lgmn.juhe.starter.service.JuHe_IdCardQuery_SarterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -34,6 +35,12 @@ public class JuHeSarterAutoConfigure {
     @ConditionalOnMissingBean(JuHe_BankCard_SarterService.class)
     JuHe_BankCard_SarterService juHe_bankCard_sarterService () {
         return new JuHe_BankCard_SarterService(juHeSarterServiceProperties.getBankCardKey());
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(JuHe_CarRegulationsQuery_StarterService.class)
+    JuHe_CarRegulationsQuery_StarterService juHe_carRegulationsQuery_starterService () {
+        return new JuHe_CarRegulationsQuery_StarterService(juHeSarterServiceProperties.getCarRegulationsKey());
     }
 
 }

@@ -1,11 +1,12 @@
 package com.lgmn.juhe.starter.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lgmn.juhe.starter.utils.JuHePostUtil;
 import org.springframework.util.MultiValueMap;
 
 public class JuHe_BankCard_SarterService {
 
-    private final static String BANKCARD_QUERY_URI = "http://v.juhe.cn/verifybankcard3/query";
+    private final static String BANKCARD_QUERY_URI = "http://v.juhe.cn/verifybankcard4/query";
 
     /**
      * 银行卡三元素key
@@ -30,7 +31,7 @@ public class JuHe_BankCard_SarterService {
      * @param map 参数需要 realname、idcard、bankcard 三个参数
      * @return
      */
-    public String postJuHeBankCard(MultiValueMap<String, String> map) {
+    public JSONObject postJuHeBankCard(MultiValueMap<String, String> map) {
         map.add("key", bankCardKey);
         return JuHePostUtil.getPostAssemble(map, BANKCARD_QUERY_URI);
     }

@@ -1,5 +1,6 @@
 package com.lgmn.juhe.starter.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lgmn.juhe.starter.utils.JuHePostUtil;
 import org.springframework.util.MultiValueMap;
 
@@ -38,7 +39,7 @@ public class JuHe_IdCardQuery_SarterService {
      * @param map 参数需要 idcard、realname 两个参数
      * @return
      */
-    public String postJuHeIdcard(MultiValueMap<String, String> map) {
+    public JSONObject postJuHeIdcard(MultiValueMap<String, String> map) {
         map.add("key", realNameKey);
         return JuHePostUtil.getPostAssemble(map, IDCARD_QUERY_URI);
     }
